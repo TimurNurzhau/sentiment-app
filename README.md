@@ -12,23 +12,13 @@ Prometheus + Grafana (kube-prometheus-stack)
 
 Helm — установка мониторинга
 
-Структура проекта
-text
-sentiment-app/
-├── src/main/java/com/example/sentimentapp/
-│   ├── SentimentAppApplication.java   # Главный класс
-│   ├── SentimentController.java       # REST-эндпоинт /api/sentiment
-│   └── MetricsConfig.java             # Настройка метрик
-├── src/main/resources/application.yaml
-├── k8s/
-│   ├── deployment.yaml    # Deployment (3 реплики)
-│   ├── service.yaml       # Service LoadBalancer
-│   ├── ingress.yaml       # Ingress для /api
-│   ├── hpa.yaml           # HorizontalPodAutoscaler (2–5 реплик)
-│   └── servicemonitor.yaml # ServiceMonitor для Prometheus
-├── Dockerfile             # Multi-stage build
-├── pom.xml
-└── README.md
+Структура проекта:
+- src/main/java/com/example/sentimentapp/ — Java-код
+- k8s/ — Kubernetes-манифесты
+- Dockerfile — сборка образа
+- pom.xml — зависимости Maven
+- README.md — этот файл
+
 Сборка и запуск
 1. Сборка JAR
    bash
